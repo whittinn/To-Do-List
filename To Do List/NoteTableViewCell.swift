@@ -9,7 +9,7 @@ import UIKit
 
 class NoteTableViewCell: UITableViewCell {
     @IBOutlet weak var noteText: UILabel!
-    
+    @IBOutlet weak var dateLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

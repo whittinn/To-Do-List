@@ -20,26 +20,36 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NoteTableViewCell" rowHeight="70" id="gzd-62-9EX" customClass="NoteTableViewCell" customModule="To_Do_List" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="70"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NoteTableViewCell" rowHeight="133" id="gzd-62-9EX" customClass="NoteTableViewCell" customModule="To_Do_List" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="133"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gzd-62-9EX" id="Q5g-4r-T7e">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="133"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cyt-gl-J7O">
-                                                    <rect key="frame" x="190" y="24" width="34" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cyt-gl-J7O">
+                                                    <rect key="frame" x="188.5" y="24" width="37" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rag-3h-zZa">
+                                                    <rect key="frame" x="193" y="59" width="28.5" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Cyt-gl-J7O" firstAttribute="centerX" secondItem="Q5g-4r-T7e" secondAttribute="centerX" id="9vv-cS-TmN"/>
-                                                <constraint firstItem="Cyt-gl-J7O" firstAttribute="top" secondItem="Q5g-4r-T7e" secondAttribute="topMargin" constant="13" id="gUH-uX-DOd"/>
+                                                <constraint firstAttribute="bottom" secondItem="Rag-3h-zZa" secondAttribute="bottom" constant="58" id="Mya-V9-58N"/>
+                                                <constraint firstItem="Cyt-gl-J7O" firstAttribute="centerX" secondItem="Q5g-4r-T7e" secondAttribute="centerX" id="UAm-No-Dsc"/>
+                                                <constraint firstItem="Cyt-gl-J7O" firstAttribute="top" secondItem="Q5g-4r-T7e" secondAttribute="topMargin" constant="13" id="UjJ-QY-as2"/>
+                                                <constraint firstItem="Rag-3h-zZa" firstAttribute="top" secondItem="Cyt-gl-J7O" secondAttribute="bottom" constant="14" id="Ybb-Bp-0AS"/>
+                                                <constraint firstItem="Rag-3h-zZa" firstAttribute="centerX" secondItem="Q5g-4r-T7e" secondAttribute="centerX" id="ppr-L5-gsW"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="dateLabel" destination="Rag-3h-zZa" id="JHd-wU-pgM"/>
                                             <outlet property="noteText" destination="Cyt-gl-J7O" id="uEY-IN-vL2"/>
                                         </connections>
                                     </tableViewCell>

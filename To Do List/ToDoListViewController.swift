@@ -9,36 +9,32 @@ import UIKit
 
 class ToDoListViewController: UIViewController {
     
+    var response = [UserResponse]()
     @IBOutlet weak var addNoteButton: UIBarButtonItem!
     @IBOutlet weak var customTblView: UITableView!
+    var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     override func viewDidLoad() {
         super.viewDidLoad()
+        retriveItems()
         addNoteButton.target = self
         addNoteButton.action = #selector(addNewNote)
+       
     }
     
     @objc func addNewNote(){
     
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let vc = storyBoard.instantiateViewController(withIdentifier: "AddNoteViewController") as? AddNoteViewController else {return }
-        navigationController?.pushViewController(vc, animated: true)
+        let alert: UIAlertController = UIAlertController(title: "New Note", message: "Insert your new note", preferredStyle: .alert)
+        alert.addTextField(configurationHandler: nil)
+        alert.addAction(UIAlertAction(title: "Submit", style: .cancel, handler: { [weak  self] _ in
+            guard let field = alert.textFields?.first, let text = field.text, !text.isEmpty else{
+                return
+            }
+            self?.createItem(response: text)
+        }))
+        present(alert, animated: true)
     }
 
 }
 
-extension ToDoListViewController: UITableViewDelegate, UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = customTblView.dequeueReusableCell(withIdentifier: "NoteTableViewCell", for: indexPath) as? NoteTableViewCell else {return UITableViewCell()}
-        cell.noteText.text = "Example note"
-        return cell
-    }
-    
-    
-    
-}
+
 
