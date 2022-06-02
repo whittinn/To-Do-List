@@ -14,10 +14,12 @@ class AddNoteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        saveNewNote.addTarget(self, action: #selector(popView), for: .touchUpInside)
     }
     
-
+    @objc func popView(){
+        navigationController?.popViewController(animated: true)
+    }
     /*
     // MARK: - Navigation
 

@@ -13,9 +13,16 @@ class ToDoListViewController: UIViewController {
     @IBOutlet weak var customTblView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        addNoteButton.target = self
+        addNoteButton.action = #selector(addNewNote)
     }
-
+    
+    @objc func addNewNote(){
+    
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let vc = storyBoard.instantiateViewController(withIdentifier: "AddNoteViewController") as? AddNoteViewController else {return }
+        navigationController?.pushViewController(vc, animated: true)
+    }
 
 }
 
