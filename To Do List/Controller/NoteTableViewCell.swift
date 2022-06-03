@@ -8,6 +8,8 @@
 import UIKit
 
 class NoteTableViewCell: UITableViewCell {
+    
+    //View objects used in the table view cell.
     @IBOutlet weak var noteText: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     override func awakeFromNib() {
