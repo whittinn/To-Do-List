@@ -27,8 +27,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="133"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cyt-gl-J7O">
-                                                    <rect key="frame" x="188.5" y="24" width="37" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cyt-gl-J7O">
+                                                    <rect key="frame" x="20" y="24" width="374" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -41,11 +41,13 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="Rag-3h-zZa" secondAttribute="bottom" constant="58" id="Mya-V9-58N"/>
+                                                <constraint firstItem="Cyt-gl-J7O" firstAttribute="top" secondItem="Q5g-4r-T7e" secondAttribute="top" constant="24" id="3hq-0Q-CNM"/>
+                                                <constraint firstAttribute="trailing" secondItem="Cyt-gl-J7O" secondAttribute="trailing" constant="20" id="Kce-ZT-hlg"/>
+                                                <constraint firstAttribute="bottom" secondItem="Rag-3h-zZa" secondAttribute="bottom" constant="58" id="QxS-3b-Xb4"/>
                                                 <constraint firstItem="Cyt-gl-J7O" firstAttribute="centerX" secondItem="Q5g-4r-T7e" secondAttribute="centerX" id="UAm-No-Dsc"/>
-                                                <constraint firstItem="Cyt-gl-J7O" firstAttribute="top" secondItem="Q5g-4r-T7e" secondAttribute="topMargin" constant="13" id="UjJ-QY-as2"/>
-                                                <constraint firstItem="Rag-3h-zZa" firstAttribute="top" secondItem="Cyt-gl-J7O" secondAttribute="bottom" constant="14" id="Ybb-Bp-0AS"/>
+                                                <constraint firstItem="Cyt-gl-J7O" firstAttribute="leading" secondItem="Q5g-4r-T7e" secondAttribute="leading" constant="20" id="opM-pe-DS0"/>
                                                 <constraint firstItem="Rag-3h-zZa" firstAttribute="centerX" secondItem="Q5g-4r-T7e" secondAttribute="centerX" id="ppr-L5-gsW"/>
+                                                <constraint firstItem="Rag-3h-zZa" firstAttribute="top" secondItem="Cyt-gl-J7O" secondAttribute="bottom" constant="14.5" id="wei-Zn-yN2"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>

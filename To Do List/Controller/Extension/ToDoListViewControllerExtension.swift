@@ -25,6 +25,10 @@ extension ToDoListViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+       return UITableView.automaticDimension
+    }
+    
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         customTblView.deselectRow(at: indexPath, animated: true)
@@ -50,7 +54,7 @@ extension ToDoListViewController: UITableViewDelegate, UITableViewDataSource {
         }))
         //delete instanceof managed object
         sheet.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { [weak self] _ in
-            self?.deleteItem(response: responseItem)
+            self?.deleteItem(responsee: responseItem)
         }))
         present(sheet, animated: true)
     }
@@ -84,9 +88,9 @@ extension ToDoListViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    func deleteItem(response: UserResponse){
+    func deleteItem(responsee: UserResponse){
         //delete instance of managed object.
-        context.delete(response)
+        context.delete(responsee)
        
         do{
             try context.save()

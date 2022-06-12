@@ -20,6 +20,7 @@ class ToDoListViewController: UIViewController {
         retriveItems()
         addNoteButton.target = self
         addNoteButton.action = #selector(addNewNote)
+        customTblView.estimatedRowHeight = UITableView.automaticDimension
        
     }
     //created function to instantiate UIAlertController.
